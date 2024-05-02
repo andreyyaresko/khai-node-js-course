@@ -6,6 +6,8 @@ const { errorResponder } = require('./error.middleware');
 const app = express();
 const PORT = 3000;
 
+app.use(express.urlencoded({extended: false}));
+
 app.use(logRequest);
 app.use(productRoutes);
 app.use(errorResponder);
